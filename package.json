@@ -1,13 +1,14 @@
 {
   "name": "@pr-single/root-config",
   "scripts": {
-    "start": "webpack serve --port 9000 --env isLocal",
+    "start:dev": "webpack-dev-server --mode=development --port 9000 --env.isLocal=true",
+    "start": "node server.js",
+    "build": "concurrently npm:build:*",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "prepare": "husky install",
-    "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "build:types": "tsc"
   },
@@ -44,6 +45,7 @@
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
     "clean-webpack-plugin": "^4.0.0",
+    "express": "^4.17.2",
     "single-spa": "^5.9.3"
   },
   "types": "dist/pr-single-root-config.d.ts"

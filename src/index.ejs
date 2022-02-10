@@ -18,19 +18,20 @@
     <meta http-equiv="Content-Security-Policy"
           content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
     <meta name="importmap-type" content="systemjs-importmap"/>
-    <script src="https://cdn.jsdelivr.net/npm/react-router-dom@6.2.1/main.js"></script>
-    <script type="systemjs-importmap">
-    {
-      "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
-        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
-        "react-router-dom": "https://cdn.jsdelivr.net/npm/react-router-dom@6.2.1/main.js"
-      }
-    }
+<!--    <script type="systemjs-importmap" src="https://storage.googleapis.com/react.microfrontends.app/importmap.json"></script>-->
+    <script type="systemjs-importmap" src="https://single-spa-demo-pr.s3.amazonaws.com/%40pr-single/importmap.json"></script>
+    <!--    <script type="systemjs-importmap">-->
+<!--    {-->
+<!--      "imports": {-->
+<!--        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",-->
+<!--        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",-->
+<!--        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",-->
+<!--        "react-router-dom": "https://cdn.jsdelivr.net/npm/react-router-dom@6.2.1/main.js"-->
+<!--      }-->
+<!--    }-->
 
 
-    </script>
+<!--    </script>-->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
     <% if (isLocal) { %>
         <script type="systemjs-importmap">
