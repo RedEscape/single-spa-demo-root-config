@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - node
+script:
+  - npm run build:webpack
+  - echo "Commit sha - $RED_COMMIT"
+  - mkdir -p build/@pr-single/root-config/$RED_COMMIT
+  - mv dist/*.* build/@pr-single/root-config/$RED_COMMIT/
+deploy:
+  provider: s3
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  bucket: "single-spa-demo-pr"
+  region: "us-east-1"
+  cache-control: "max-age=31536000"
+  acl: "public_read"
+  local_dir: build
+  skip_cleanup: true
+  on:
+    branch: master
