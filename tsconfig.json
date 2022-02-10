@@ -1,8 +1,6 @@
 {
   "extends": "ts-config-single-spa",
-  "files": [
-    "src/declarations.d.ts"
-  ],
+  "files": ["src/declarations.d.ts"],
   "compilerOptions": {
     "declarationDir": "dist"
   },
