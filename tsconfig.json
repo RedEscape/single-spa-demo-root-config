@@ -1,7 +1,7 @@
 {
   "extends": "ts-config-single-spa",
   "files": [
-    "src/pr-single-root-config"
+    "src/declarations.d.ts"
   ],
   "compilerOptions": {
     "declarationDir": "dist"
